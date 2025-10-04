@@ -7,7 +7,7 @@ import { Route, Routes } from "react-router";
 import BookDetails from "../library/bookDetails/BookDetails";
 import { successToast, errorToast } from "../ui/notifications/notifications";
 import ToggleTheme from "../services/theme/toggleTheme/ToggleTheme";
-const baseUrl = import.meta.env.VITE_BASE_SERVER_URL
+const baseUrl = 'http://localhost:3000'
 
 const Dashboard = ({ signedOut }) => {
 
@@ -64,7 +64,7 @@ const Dashboard = ({ signedOut }) => {
   const location = useLocation()
   useEffect(() => { 
     if (location.pathname === '/library'){ //para que cuando cambie la bd se muestre
-      fetch(`${baseUrl}/login`, {
+      fetch(`${baseUrl}/books`, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('book-champions-token')}`
         }

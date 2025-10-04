@@ -11,7 +11,6 @@ const ComboLanguage = () => {
     const changeLanguage = (event) => {
         changeLanguageHandler(event.target.value);
     };
-    console.log("Idioma actual:", language);
 
     return (
         <Form.Select
